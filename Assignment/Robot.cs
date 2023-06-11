@@ -1,9 +1,10 @@
 ﻿// Change to 'using Assignment.InterfaceCommand' when you are ready to test your interface implementation
-using Assignment.AbstractCommand;
+// using Assignment.AbstractCommand;
+using Assignment.interfaceCommand;
 
 namespace Assignment;
 
-class Robot
+public class Robot
 {
     // These are properties, you can replace these with traditional getters/setters if you prefer.
     public int NumCommands { get; }
@@ -22,14 +23,20 @@ class Robot
     {
         return $"[{X} {Y} {IsPowered}]";
     }
-
+    //summary
+    // Constructor named "Robot" with no parameters. It has an initilizer that calls another constructor.
+    //summary
+    // dConstructor
+    // <modifier>public</modifier>
+    //<name>Robot</name> 
+    //parameters
     // You should not have to use any of the methods below here but you should
     // provide XML documentation for the argumented constructor, the Run method and one
     // of the LoadCommand methods.
     public Robot() : this(DefaultCommands) { }
 
     /// <summary>
-    /// Constructor that initializes the robot with the capacity to store a user specified
+    ///  initializes the robot with the capacity to store a user specified
     /// number of commands
     /// </summary>
     /// <param name="numCommands">The maximum number of commands the robot can store</param>
@@ -45,11 +52,9 @@ class Robot
     /// <throws> </throws>
     public void Run()
     {
-        // Is this throw a good design choice? Can you think of any alternatives?
-        if (!_commands.Any()) throw new InvalidOperationException("No commands have been loaded!");
-        foreach (var command in _commands)
+        for (var i = 0; i < _commandsLoaded; ++i)
         {
-            command.Run(this);
+            _command[i].Run(this);
             Console.WriteLine(this);
         }
     }
