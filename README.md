@@ -1,3 +1,4 @@
+![Screenshot 2023-06-12 013822](https://github.com/arshpreet44/IOT1026-Assignment-4/assets/134253496/21f5beb8-eb91-4fa8-8342-30f4ca26d2c3)
 <p align="center">
 	<a href="https://github.com/arshpreet44/IOT1026-Assignment-4/actions/workflows/ci.yml">
     <img src="https://github.com/arshpreet44/IOT1026-Assignment-4/actions/workflows/ci.yml/badge.svg"/>
