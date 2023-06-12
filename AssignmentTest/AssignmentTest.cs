@@ -1,4 +1,5 @@
 ﻿using Assignment;
+using Assignment.AbstractCommand;
 
 namespace AssignmentTest
 {
@@ -26,18 +27,17 @@ namespace AssignmentTest
             robot1.Y = -5;
             Assert.AreEqual(robot1.Y, -5);
         }
-            [TestMethod]
 
-            public void CommandTest() {
-                Robot testRobot = new();
+        [TestMethod]
+        public void CommandTest()
+        {
+            Robot testRobot = new();
 
-                Assert.AreEqual(testRobot.IsPowered, false);
-                testRobot.LoadCommand(new OnCommand();
-
-
-
-            }
-
+            Assert.AreEqual(testRobot.IsPowered, false);
+            testRobot.LoadCommand(new OnCommand());
+            testRobot.Run();
+            Assert.AreEqual(testRobot.IsPowered, true);
         }
     }
 }
+
