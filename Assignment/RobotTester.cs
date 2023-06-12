@@ -9,8 +9,28 @@ static class RobotTester
         int totalCommands = 1;
         Robot robot = new Robot();
         Console.WriteLine("Choose 6 Commands : \nON\nOFF\nNORTH\nSOUTH\nEAST\nSOUTH\nWEST\nREBOOT\n");
+        Console.WriteLine("Choose from the given commands : \n");
+        Console.WriteLine("ON\n");
+        Console.WriteLine("OFF\n");
+        Console.WriteLine("WEST\n");
+        Console.WriteLine("EAST\n");
+        Console.WriteLine("NORTH\n");
+        Console.WriteLine("SOUTH\n");
         do{
-            Console.Write($"Enter Command | #{totalCommands}: ");
+            if(totalCommands == 1){
+                Console.Write($"Enter {totalCommands}st command : ");
+            }
+            else if (totalCommands == 2){
+                Console.Write($"Enter {totalCommands}nd command : ");
+            }
+            else if (totalCommands == 3){
+                Console.Write($"Enter {totalCommands}rd command : ");
+            }
+            else if (totalCommands >= 4){
+                Console.Write($"Enter {totalCommands}th command : ");
+            }
+            
+
             string? choice = Console.ReadLine()?.ToUpper();
             RobotCommand? command = choice switch{
                 "ON" => new OnCommand(),
@@ -28,7 +48,7 @@ static class RobotTester
             }
             else{
                 Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Not a valid Command !!!");
+            Console.WriteLine("ERROR This is not a valid command");
                 Console.ResetColor();
             }
         } while (totalCommands <= 6);

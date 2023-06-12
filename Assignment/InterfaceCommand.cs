@@ -2,16 +2,22 @@
 
 public interface RobotCommand
 {
-    void Run(Robot robot); // Interfaces are public and abstract by default.
+    void Run(Robot robot); 
 }
 public class OffCommand : RobotCommand{
-    public void Run(Robot robot)=> robot.IsPowered=false;}
+    public void Run(Robot robot){
+        robot.IsPowered=false;
+    }
+        }
 
 public class OnCommand : RobotCommand{
-    public void Run(Robot robot) =>robot.IsPowered=true;}
+    public void Run(Robot robot){
+        robot.IsPowered=true;
+        }
+}
 
 public class WestCommand : RobotCommand{
-    public void Run(Robot robot) { 
+    public void Run(Robot robot) {
         if (robot.IsPowered){
             robot.X--;
             } 
@@ -21,8 +27,8 @@ public class WestCommand : RobotCommand{
 public class EastCommand : RobotCommand{
     public void Run(Robot robot) { 
         if (robot.IsPowered) {
-            robot.X++;}
-            
+            robot.X++;
+            }
             }
 }
 
@@ -37,16 +43,15 @@ public class SouthCommand : RobotCommand{
 public class NorthCommand : RobotCommand{
     public void Run(Robot robot) { 
         if (robot.IsPowered){
-            robot.Y++;}
+            robot.Y++;
+            }
              }
 }
 
 public class RebootCommand : RobotCommand{
-    public void Run(Robot robot) 
-    { if (robot.IsPowered) {
+    public void Run(Robot robot) { 
         robot.Y = 0; 
         robot.X = 0; 
         robot.IsPowered = false; 
         }
     }
-}
