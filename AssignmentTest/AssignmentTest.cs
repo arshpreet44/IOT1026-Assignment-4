@@ -10,7 +10,7 @@ namespace AssignmentTest
         {
             Robot robot1 = new();
             Assert.AreEqual(robot1.NumCommands, 6);
-            var expectedCommands = 10;
+            const int expectedCommands = 10;
             Robot robot2 = new(expectedCommands);
             Assert.AreEqual(robot1.NumCommands, expectedCommands);
 
@@ -25,6 +25,18 @@ namespace AssignmentTest
             Assert.AreEqual(robot1.Y, 0);
             robot1.Y = -5;
             Assert.AreEqual(robot1.Y, -5);
+        }
+            [TestMethod]
+
+            public void CommandTest() {
+                Robot testRobot = new();
+
+                Assert.AreEqual(testRobot.IsPowered, false);
+                testRobot.LoadCommand(new OnCommand();
+
+
+
+            }
 
         }
     }
