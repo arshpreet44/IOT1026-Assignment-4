@@ -2,7 +2,7 @@
 using Assignment.interfaceCommand;
 
 namespace Assignment
-{
+{ 
     public class Robot
     {
         // These are properties, you can replace these with traditional getters/setters if you prefer.
