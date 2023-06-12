@@ -1,4 +1,4 @@
-using Assignment.InterfaceCommand;
+﻿using Assignment.InterfaceCommand;
 
 namespace Assignment;
 
@@ -16,23 +16,29 @@ static class RobotTester
         Console.WriteLine("EAST\n");
         Console.WriteLine("NORTH\n");
         Console.WriteLine("SOUTH\n");
-        do{
-            if(totalCommands == 1){
+        do
+        {
+            if (totalCommands == 1)
+            {
                 Console.Write($"Enter {totalCommands}st command : ");
             }
-            else if (totalCommands == 2){
+            else if (totalCommands == 2)
+            {
                 Console.Write($"Enter {totalCommands}nd command : ");
             }
-            else if (totalCommands == 3){
+            else if (totalCommands == 3)
+            {
                 Console.Write($"Enter {totalCommands}rd command : ");
             }
-            else if (totalCommands >= 4){
+            else if (totalCommands >= 4)
+            {
                 Console.Write($"Enter {totalCommands}th command : ");
             }
-            
+
 
             string? choice = Console.ReadLine()?.ToUpper();
-            RobotCommand? command = choice switch{
+            RobotCommand? command = choice switch
+            {
                 "ON" => new OnCommand(),
                 "OFF" => new OffCommand(),
                 "NORTH" => new NorthCommand(),
@@ -42,13 +48,15 @@ static class RobotTester
                 "REBOOT" => new RebootCommand(),
                 _ => null
             };
-            if (command!=null){
+            if (command != null)
+            {
                 robot.LoadCommand(command);
                 totalCommands++;
             }
-            else{
+            else
+            {
                 Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("ERROR This is not a valid command");
+                Console.WriteLine("ERROR This is not a valid command");
                 Console.ResetColor();
             }
         } while (totalCommands <= 6);
